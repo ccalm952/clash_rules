@@ -6,8 +6,8 @@ export type SubscriptionItem = {
   url: string;
 };
 
-const STORAGE_LIST = "clash_rules_subscriptions_v1";
-const STORAGE_SELECTED = "clash_rules_sub_selected_v1";
+const STORAGE_LIST = "ccalm-rules-subscriptions-v1";
+const STORAGE_SELECTED = "ccalm-rules-sub-selected-v1";
 
 function nameFromSubUrl(url: string): string {
   try {

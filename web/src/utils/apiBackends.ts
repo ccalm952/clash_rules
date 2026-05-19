@@ -4,8 +4,8 @@ export type ApiBackend = {
   baseUrl: string;
 };
 
-const STORAGE_CUSTOM = "clash_rules_api_backends_custom_v1";
-const STORAGE_SELECTED = "clash_rules_api_selected_v1";
+const STORAGE_CUSTOM = "ccalm-rules-api-backends-custom-v1";
+const STORAGE_SELECTED = "ccalm-rules-api-selected-v1";
 
 export const BUILTIN_API_BACKENDS: ApiBackend[] = [
   {

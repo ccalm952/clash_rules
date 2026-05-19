@@ -312,7 +312,7 @@ export default function App() {
     <div className="min-h-svh bg-background px-4 py-10">
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-6">
         <div className="space-y-1 text-center">
-          <CardTitle className="text-center">Clash 订阅转换</CardTitle>
+          <CardTitle className="text-center">订阅转换</CardTitle>
           <CardDescription className="text-center">
             基于{" "}
             <a

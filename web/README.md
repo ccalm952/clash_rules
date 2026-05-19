@@ -1,11 +1,11 @@
-# clash-rules-web
+# 订阅转换（ccalm-rules-web）
 
-Vite + React + **shadcn/ui**（与 [ccalm-system](https://github.com/ccalm952/ccalm-system) 相同：`base-nova` + Tailwind v4）。
+浏览器标题与页面标题均为 **订阅转换**。技术栈：Vite + React + **shadcn/ui**（与 [ccalm-system](https://github.com/ccalm952/ccalm-system) 相同：`base-nova` + Tailwind v4）。
 
 ## 本地开发
 
 ```bash
-cd /path/to/clash_rules
+cd /path/to/ccalm-rules
 pnpm install
 pnpm dev
 ```
@@ -41,6 +41,6 @@ pnpm dlx shadcn@latest add <组件名>
 
 配置见 [components.json](./components.json)。
 
-## 部署
+## 1Panel 部署
 
-见根目录 [README.md](../README.md) 中的「1Panel 部署」章节。
+见根目录 [README.md](../README.md)。

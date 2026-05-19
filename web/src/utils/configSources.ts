@@ -5,8 +5,8 @@ export type ConfigSourceItem = {
   description?: string;
 };
 
-const STORAGE_OVERRIDES = "clash_rules_config_sources_overrides_v1";
-const STORAGE_SELECTED = "clash_rules_config_selected_v1";
+const STORAGE_OVERRIDES = "ccalm-rules-config-sources-overrides-v1";
+const STORAGE_SELECTED = "ccalm-rules-config-selected-v1";
 
 /** 唯一允许编辑 rules.ini 地址的内置来源 */
 export const EDITABLE_CONFIG_SOURCE_ID = "github";
@@ -15,25 +15,25 @@ export const BUILTIN_CONFIG_SOURCES: ConfigSourceItem[] = [
   {
     id: "testingcf",
     label: "testingcf 加速",
-    url: "https://testingcf.jsdelivr.net/gh/ccalm952/clash_rules@main/rules.ini",
+    url: "https://testingcf.jsdelivr.net/gh/ccalm952/ccalm-rules@main/rules.ini",
     description: "推荐",
   },
   {
     id: "fastly",
     label: "Fastly 代理",
-    url: "https://fastly.jsdelivr.net/gh/ccalm952/clash_rules@main/rules.ini",
+    url: "https://fastly.jsdelivr.net/gh/ccalm952/ccalm-rules@main/rules.ini",
     description: "fastly.jsdelivr.net",
   },
   {
     id: "cdn",
     label: "jsDelivr CDN",
-    url: "https://cdn.jsdelivr.net/gh/ccalm952/clash_rules@main/rules.ini",
+    url: "https://cdn.jsdelivr.net/gh/ccalm952/ccalm-rules@main/rules.ini",
     description: "cdn.jsdelivr.net",
   },
   {
     id: "github",
     label: "GitHub 源站",
-    url: "https://raw.githubusercontent.com/ccalm952/clash_rules/refs/heads/main/rules.ini",
+    url: "https://raw.githubusercontent.com/ccalm952/ccalm-rules/refs/heads/main/rules.ini",
     description: "raw.githubusercontent.com",
   },
 ];
