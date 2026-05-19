@@ -323,15 +323,6 @@ export default function App() {
             >
               SubConverter-Extended
             </a>
-            {" · "}
-            <a
-              className="text-primary underline-offset-4 hover:underline"
-              href="https://github.com/ccalm952/clash_rules"
-              target="_blank"
-              rel="noreferrer"
-            >
-              clash_rules
-            </a>
           </CardDescription>
         </div>
 
