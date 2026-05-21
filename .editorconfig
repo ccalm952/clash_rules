@@ -1,0 +1,10 @@
+# EditorConfig https://editorconfig.org
+
+root = true
+
+[*.{yaml,yml}]                      # 仅 yaml / yml
+indent_style = space                # 空格缩进
+indent_size = 2                     # 每级 2 空格
+end_of_line = lf                    # LF 换行
+insert_final_newline = true         # 文件末尾换行
+trim_trailing_whitespace = true     # 去掉行尾空格

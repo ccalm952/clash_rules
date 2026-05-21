@@ -1,54 +1,34 @@
 # ccalm-rules
 
-OpenClash 订阅转换：本仓库提供 [rules.ini](./rules.ini)（分流策略）与 **订阅转换** Web 页面（本地生成转换链接，订阅地址不上传服务器）。
+Mihomo / Clash 分流覆写，仓库内仅维护 [ccalm-rules.yaml](./ccalm-rules.yaml)。
 
-- 转换 API 示例：[SubConverter-Extended](https://github.com/Aethersailor/SubConverter-Extended) 公共实例 `https://api.asailor.org/sub`
-- 本地开发、构建、代码检查：见 [web/README.md](./web/README.md)
+## 用法
 
-## 1Panel 部署
-
-与 [ccalm-system](https://github.com/ccalm952/ccalm-system) 相同：**Vite 构建静态资源 → 放入 1Panel 网站目录 → OpenResty 配置 SPA 回退**。
-
-### 目录结构
+| 场景 | 操作 |
+|------|------|
+| Clash Party | 设置 → 覆写 → YAML，粘贴全文或填远程地址。见 [覆写文档](https://clashparty.org/docs/guide/override/yaml) |
+| Sub-Store | 文件管理 → Mihomo 配置 → 脚本操作，粘贴全文（YAML patch） |
+| 远程引用 | 使用下方 GitHub raw 链接（`main` 分支） |
 
 ```text
-ccalm-rules/
-  web/        # 前端（构建产物在 web/dist/）
-  rules.ini   # OpenClash 远程 config
+https://raw.githubusercontent.com/ccalm952/ccalm-rules/main/ccalm-rules.yaml
 ```
 
-### 部署步骤
+## 节点命名
 
-```bash
-cd /opt/ccalm-rules
-git clone https://github.com/ccalm952/ccalm-rules.git .
-pnpm install
-pnpm build
-cp -r web/dist/* /opt/1panel/www/sites/<你的域名>/index/
-```
+地区 url-test 组按节点名前缀匹配，Sub-Store 组合订阅里重命名即可：
 
-在 1Panel 对应站点的 OpenResty 配置中增加：
+`香港 `、`美国 `、`韩国 `、`日本 `（前缀 + 空格 + 名称）
 
-```nginx
-location / {
-  try_files $uri $uri/ /index.html;
-}
-```
+## 规则库
 
-浏览器访问你的域名，使用页面生成转换链接后，将结果填入 OpenClash **订阅地址**（客户端类型选 Clash；订阅转换可关闭，转换已在链接中完成）。
+GeoSite / GeoIP：[meta-rules-dat](https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat)（`geosite.dat`、`geoip.dat`）。
 
-### 更新
+## 编辑约定
 
-```bash
-cd /opt/ccalm-rules
-git pull
-pnpm install
-pnpm build
-cp -r web/dist/* /opt/1panel/www/sites/<你的域名>/index/
-```
+排版见 [.editorconfig](./.editorconfig)。覆写文件只写需覆盖的字段（如 `mode`、`rules`、`proxy-groups`），勿加仅供文档的顶层键。
 
-## 相关链接
-
-- [rules.ini](./rules.ini)
-- [SubConverter-Extended](https://github.com/Aethersailor/SubConverter-Extended)
-- [Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules)
+- 规则一行一条：`TYPE,值,策略`；`no-resolve` 写在行尾
+- 策略组名与 `rules` 引用完全一致
+- `filter` 正则用单引号，如 `'^香港\s'`
+- 注释用 `#` 做分组标题即可
