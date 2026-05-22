@@ -11,6 +11,7 @@ rules:
   - GEOSITE,steam@cn,DIRECT
   # 自建直连
   - DOMAIN-SUFFIX,ccalm.xyz,DIRECT
+  - DOMAIN-SUFFIX,yutoons.com,DIRECT
   # 业务代理
   - GEOSITE,category-ai-!cn,AI
   - GEOSITE,github,github
